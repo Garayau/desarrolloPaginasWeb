@@ -1,0 +1,123 @@
+<!DOCTYPE html> 
+<html lang="es">
+    <head>
+        <title>Agregar viaje - Pocket Airlines</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+        crossorigin="anonymous">
+    </head>
+    <body onload="createDatalist()">
+        <div class="row text-center bg-light">
+            <div class="col p-2 border position-relative">
+                <a href="inicio.html" class="stretched-link">Volver al inicio</a>&nbsp;
+            </div>
+            <div class="col p-2 border position-relative">
+                <a href="agregar-encargo.html" class="stretched-link">Agregar Encargo</a>&nbsp;
+            </div>
+            <div class="col p-2 border position-relative">
+                <a href="ver-viajes.html" class="stretched-link">Ver Viajes</a>&nbsp;
+            </div>
+            <div class="col p-2 border position-relative">
+                <a href="ver-encargos.html" class="stretched-link">Ver Encargos</a>&nbsp;
+            </div>
+        </div>
+
+        <div class="row-sm-4 text-center p-3 border bg-light">
+            <h1>Agregar Viaje</h1>
+        </div>
+            
+        <br><br>
+        <div class="container">
+            <div class="row justify-content-around">
+
+                <div class="col-lg-5 col-sm-8 info">
+                    <form class="form" action="#" onsubmit="return validacion()">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Origen:</label>  
+                                <br>
+                                <label class="form-label">Pais:</label>
+                                <input list="paisesOrigen" class="form-control" id="paisOrigen" name="pais-origen" onfocusout="updateDatalist()">
+                                <datalist id="paisesOrigen" class="paisesDatalist" ></datalist>
+            
+                                <label class="form-label">Ciudad:</label>
+                                <input list="ciudadesOrigen" class="form-control" id="ciudadOrigen" name="ciudad-origen" onfocusout="updateDatalist()">
+                                <datalist id="ciudadesOrigen" class="ciudadesDatalist"></datalist>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Destino:</label>
+                                <br>
+                                <label class="form-label">Pais:</label>
+                                <input list="paisesDestino" class="form-control" id="paisDestino" name="pais-destino" onfocusout="updateDatalist()">
+                                <datalist id="paisesDestino" class="paisesDatalist"></datalist>
+            
+                                <label class="form-label">Ciudad:</label>
+                                <input list="ciudadesDestino" class="form-control" id="ciudadDestino" name="ciudad-destino" onfocusout="updateDatalist()">
+                                <datalist id="ciudadesDestino" class="ciudadesDatalist"></datalist>
+            
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Fecha:</label>
+                                <br>
+                                <label class="form-label">Ida:</label>
+                                <input type="text" id="fechaIda" class="date form-control" name="fecha-ida" size="10" 
+                                placeholder="2022-08-22" pattern="[0-9]{4}-[0-z]{2}-[0-9]{2}" onfocusout="checkInputDate()">
+            
+                                <label class="form-label">Regreso:</label>
+                                <input type="text" id="fechaRegreso" class="date form-control" name="fecha-regreso" size="10" 
+                                placeholder="2022-11-18" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" onfocusout="checkInputDate()">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Espacio disponible:</label>
+                                <select id="espacio" class="form-control" name="espacio-disponible" onfocusout="checkSpace()">
+                                    <option value="">Seleccione uno...</option>
+                                    <option value="10x10x10">10x10x10</option>
+                                    <option value="20x20x20">20x20x20</option>
+                                    <option value="30x30x30">30x30x30</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Kilos disponibles:</label>
+                                <select id="kilos" class="form-control" name="kilos-disponibles" onfocusout="checkKilos()">
+                                    <option value="">Seleccione uno...</option>
+                                    <option value="200 gr">200 gr</option>
+                                    <option value="500 gr">500 gr</option>
+                                    <option value="800 gr">800 gr</option>
+                                    <option value="1 kg">1 kg</option>
+                                    <option value="1.5 kg">1.5 kg</option>
+                                    <option value="2 kg">2 kg</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email:</label>
+                                <input type="email" id="email" class="email form-control" name="email-agregar-viaje"
+                                size="30" placeholder="random@user.com" onfocusout="checkEmail()" >
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Número celular:</label>
+                                <input type="tel" id="celularViaje" class="phone form-control" name="phone-agregar-viaje"
+                                placeholder="9 12345678" size="15" onfocusout="checkPhone()">
+                            </div>
+
+                            <br>
+                            <input type="submit" class="btn btn-primary mb-3" value="Request Reservation"/>
+                        </div>
+                    </form>                    
+                </div>
+
+                <div class="col-lg-5 col-md-6 info">
+                    <div id="errorContainer" class="form-group"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <script src="main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    </body>
+</html>

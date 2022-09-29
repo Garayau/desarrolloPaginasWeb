@@ -1,0 +1,101 @@
+<!DOCTYPE html> 
+<html lang="es">
+    <head>
+        <title>Ver viajes - Pocket Airlines</title>        
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+        crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class="row text-center bg-light">
+            <div class="col p-2 border position-relative">
+                <a href="inicio.html" class="stretched-link">Volver al inicio</a>&nbsp;
+            </div>
+            <div class="col p-2 border position-relative">
+                <a href="agregar-viaje.html" class="stretched-link">Agregar Viaje</a>&nbsp;
+            </div>
+            <div class="col p-2 border position-relative">
+                <a href="agregar-encargo.html" class="stretched-link">Agregar Encargo</a>&nbsp;
+            </div>
+            <div class="col p-2 border position-relative">
+                <a href="ver-encargos.html" class="stretched-link">Ver Encargos</a>&nbsp;
+            </div>
+        </div>
+
+        <div class="row-sm-4 text-center p-3 border bg-light">
+            <h1>Ver Viajes:</h1>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table align-middle table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Origen</th>
+                        <th>Destino</th>
+                        <th>Fecha ida</th>
+                        <th>Fecha llegada</th>
+                        <th>Espacio</th>
+                        <th>Kilos</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr data-href="./informacion-viaje.html?pais-origen='Japón'&ciudad-origen='Tokio'&pais-destino='Alemania'&ciudad-destino='Berlín'&fecha-ida='14-08-2022'&fecha-regreso='15-08-2022'&espacio-disponible='10x10x10'&kilos-disponibles='1.5 kg'&email='pikachu@pocket-monsters.jp'&celular=">
+                        <td>Japón:Tokio</td>
+                        <td>Alemania:Berlín</td>
+                        <td>14-08-2022</td>
+                        <td>15-08-2022</td>
+                        <td>10x10x10</td>
+                        <td>1.5 kg</td>
+                        <td>pikachu@pocket-monsters.jp</td>
+                    </tr>
+                    <tr data-href="./informacion-viaje.html?pais-origen='Alemania'&ciudad-origen='Berlín'&pais-destino='Japón'&ciudad-destino='Tokio'&fecha-ida='14-08-2022'&fecha-regreso='28-08-2022'&espacio-disponible='30x30x30'&kilos-disponibles='200 gr'&email='luigi@luigis-mansion.mr'&celular=">
+                        <td>Alemania:Berlín</td>
+                        <td>Japón:Tokio</td>
+                        <td>14-08-2022</td>
+                        <td>28-08-2022</td>
+                        <td>30x30x30</td>
+                        <td>200 gr</td>
+                        <td>luigi@luigis-mansion.mr</td>
+                    </tr>
+                    <tr data-href="./informacion-viaje.html?pais-origen='España'&ciudad-origen='Madrid'&pais-destino='Portugal'&ciudad-destino='Lisbon'&fecha-ida='14-08-2022'&fecha-regreso='21-08-2022'&espacio-disponible='20x20x20'&kilos-disponibles='1.5 kg'&email='jolteon@electric.el'&celular=">
+                        <td>España:Madrid</td>
+                        <td>Portugal:Lisbon</td>
+                        <td>14-08-2022</td>
+                        <td>21-08-2022</td>
+                        <td>20x20x20</td>
+                        <td>1.5 kg</td>
+                        <td>jolteon@electric.el</td>
+                    </tr>
+                    <tr data-href="./informacion-viaje.html?pais-origen='Estados Unidos'&ciudad-origen='Washington, D.C.'&pais-destino='España'&ciudad-destino='Madrid'&fecha-ida='02-09-2022'&fecha-regreso='14-09-2022'&espacio-disponible='30x30x30'&kilos-disponibles='2 kg'&email='link@zelda.nt'&celular=">
+                        <td>Estados Unidos:Washington, D.C.</td>
+                        <td>España:Madrid</td>
+                        <td>02-09-2022</td>
+                        <td>14-09-2022</td>
+                        <td>30x30x30</td>
+                        <td>2 kg</td>
+                        <td>link@zelda.nt</td>
+                    </tr>
+                    <tr data-href="./informacion-viaje.html?pais-origen='Japón'&ciudad-origen='Tokio'&pais-destino='Estados Unidos'&ciudad-destino='Washington, D.C.'&fecha-ida='02-09-2022'&fecha-regreso='14-09-2022'&espacio-disponible='20x20x20'&kilos-disponibles='2 kg'&email='nintendo@nintendo.jp'&celular=">
+                        <td>Japón:Tokio</td>
+                        <td>Estados Unidos:Washington, D.C.</td>
+                        <td>02-09-2022</td>
+                        <td>14-09-2022</td>
+                        <td>20x20x20</td>
+                        <td>2 kg</td>
+                        <td>nintendo@nintendo.jp</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script src="./main.js"></script>
+        <script>clickableRows()</script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    </body>
+</html>
